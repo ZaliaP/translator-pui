@@ -1,0 +1,18 @@
+[
+  {
+    "ID": 1,
+    "EMAIL": "test@test.pl",
+    "USERNAME": "test1",
+    "PASSWORD": "test1",
+    "ROLE": "user",
+    "CREATED_AT": "2026-04-09 14:06:31.529291"
+  },
+  {
+    "ID": 2,
+    "EMAIL": "test2@test.pl",
+    "USERNAME": "test2",
+    "PASSWORD": "test2",
+    "ROLE": "user",
+    "CREATED_AT": "2026-04-09 14:06:31.529291"
+  }
+]

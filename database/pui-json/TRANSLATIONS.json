@@ -1,0 +1,20 @@
+[
+  {
+    "ID": 1,
+    "USER_ID": 1,
+    "SOURCE_TEXT": "tekst",
+    "TRANSLATED_TEXT": "text",
+    "SOURCE_LANG": "pl",
+    "TARGET_LANG": "en",
+    "IS_SAVED": false
+  },
+  {
+    "ID": 2,
+    "USER_ID": 2,
+    "SOURCE_TEXT": "text",
+    "TRANSLATED_TEXT": "tekst",
+    "SOURCE_LANG": "en",
+    "TARGET_LANG": "pl",
+    "IS_SAVED": false
+  }
+]
