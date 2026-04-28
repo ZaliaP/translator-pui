@@ -18,11 +18,11 @@ const translate = async () => {
 
   try {
     // Adres Twojego lokalnego backendu w Django
-    const response = await axios.post('http://127.0.0.1:8000/api/translate/', {
-      text: sourceText.value,
-      source_lang: sourceLang.value,
-      target_lang: targetLang.value
-    })
+    // NOWA WERSJA (Poprawna)
+const response = await axios.post('http://127.0.0.1:8000/api/translate/', {
+  text: sourceText.value,
+  lang: targetLang.value    // <-- Zmiana nazwy klucza na "lang" (tego szuka Bartek!)
+})
     
     // Zakładamy, że Bartek odsyła JSON z polem 'translated_text'
     translatedText.value = response.data.translated_text

@@ -15,7 +15,7 @@ const handleLogout = () => {
 <template>
   <aside class="sidebar">
     <nav class="menu">
-      <router-link to="/ustawienia" class="menu-item active">
+      <router-link to="/ustawienia" class="menu-item">
         <span class="icon">⚙️</span> Ustawienia konta
       </router-link>
       
@@ -70,8 +70,8 @@ const handleLogout = () => {
   color: white;
 }
 
-/* Styl dla aktualnie wybranej zakładki */
-.menu-item.active {
+/* Styl dla DOKŁADNIE wybranej zakładki (magia Vue Routera) */
+.menu-item.router-link-exact-active {
   background-color: #4a52ff;
   color: white;
 }
