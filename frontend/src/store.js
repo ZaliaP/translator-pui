@@ -1,19 +1,15 @@
 import { reactive } from 'vue'
 
-// Tworzymy globalny, reaktywny "magazyn" danych
+// "reactive" sprawia, że Vue śledzi każdą zmianę w tym obiekcie
 export const authStore = reactive({
-  // Na razie wymuszamy status zalogowanego (true), żeby widzieć efekty w Ustawieniach
-  isLoggedIn: true, 
+  isLoggedIn: false,
   user: {
-    name: 'Mateusz', // Tu wstaw swoje imię!
-    email: 'mateusz@example.com'
+    name: ''
   },
   
-  // Funkcje do zmiany stanu
-  login() {
-    this.isLoggedIn = true
-  },
+  // Funkcja wylogowywania (przyda nam się do przycisku w Sidebarze)
   logout() {
     this.isLoggedIn = false
+    this.user = { name: '' }
   }
 })

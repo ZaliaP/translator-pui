@@ -1,3 +1,7 @@
+<script setup>
+import { authStore } from '../store.js'
+</script>
+
 <template>
   <nav class="navbar">
     <div class="logo">
@@ -8,8 +12,20 @@
     </div>
     
     <div class="nav-links">
-      <router-link to="/rejestracja" class="nav-text">Rejestracja</router-link>
-      <router-link to="/login" class="btn-login">Zaloguj się</router-link>
+      <!-- Jeśli użytkownik NIE JEST zalogowany -->
+      <template v-if="!authStore.isLoggedIn">
+        <router-link to="/rejestracja" class="nav-text">Rejestracja</router-link>
+        <router-link to="/login" class="btn-login">Zaloguj się</router-link>
+      </template>
+
+      <!-- Jeśli użytkownik JEST zalogowany -->
+      <template v-else>
+        <router-link to="/ustawienia" class="nav-text user-profile">
+          Cześć, {{ authStore.user.name }}! 
+          <!-- dynamicznie pobieramy pierwszą literę imienia do avatara -->
+          <span class="avatar">{{ authStore.user.name?.charAt(0).toUpperCase() || 'U' }}</span>
+        </router-link>
+      </template>
     </div>
   </nav>
 </template>
@@ -68,5 +84,31 @@
 
 .btn-login:hover {
   background-color: #1d2042;
+}
+
+/* --- NOWE STYLE DLA ZALOGOWANEGO UŻYTKOWNIKA --- */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #2a2e5d;
+  transition: opacity 0.2s;
+}
+
+.user-profile:hover {
+  opacity: 0.8;
+}
+
+.avatar {
+  background-color: #4a52ff;
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1rem;
 }
 </style>
